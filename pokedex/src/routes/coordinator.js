@@ -12,7 +12,7 @@ export const goToPreviousPage = (navigate) => {
 navigate(-1)
 };
 
-export const goToDetailsPage = (navigate) => {
-    // navigate(`/pokemon/${pokeName}/details`)
+export const goToDetailsPage = (navigate, pokeName) => {
+    navigate(`/pokemon/${pokeName}/details`)
 }
 
