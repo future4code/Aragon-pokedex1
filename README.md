@@ -1,9 +1,9 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Carolini Constantino
+- Suzy Chiconi
+- Tiago Bonfim
 
 Link do Surge: www.link.com.br
 
