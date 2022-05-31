@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import {  goToPokedexPage, goToPokeListPage, goToPreviousPage } from "../routes/coordinator";
+import { goToPokedexPage, goToPokeListPage, goToPreviousPage } from "../routes/coordinator";
 import pokedex from "./img/pokedex.png"
 
 const StyledHeader = styled.header`
@@ -8,6 +8,7 @@ border: 1px solid black;
 background-color: #f5050d;
 padding: 10px;
 text-align: center;
+
 button {
   appearance: button;
   background-color: #3366AF;
@@ -54,8 +55,7 @@ button:after {
   z-index: -1;
 }
 
-button:main,
-button:focus {
+button:main, button:focus {
   user-select: auto;
 }
 
@@ -67,62 +67,64 @@ button:hover:not(:disabled) {
 button:disabled {
   cursor: auto;
 }
-img{
-    width: 50%;
+
+img {
+  width: 50%;
 }
-.eevee{
-width: 15%;
+
+.eevee {
+  width: 15%;
 }
-.pikachu{
-width: 10%;
+
+.pikachu {
+  width: 10%;
 }
-h1{
+
+h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: #FECB05;
     font-size: 50px;
-
 }
-
 `
 
-export default function Header(props) {  
+export default function Header(props) {
     const navigate = useNavigate()
 
     const RenderHeader = () => {
         switch (props.actualPage) {
-            case "pokelist": 
-            return (
-                <div>
-                <img className="pikachu" src="https://c.tenor.com/rbx3ph5SLRUAAAAj/pikachu-pokemon.gif"/>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" />
-                <img className="eevee" src="https://i.pinimg.com/originals/ce/d6/d8/ced6d8351df9f61eb31032c028cc13a9.gif"/>
-                <br/>
-                <button onClick={() => goToPokedexPage(navigate)}>Ir Para Pokedex</button>
-                </div> 
-              )
+            case "pokelist":
+                return (
+                    <section>
+                        <img className="pikachu" src="https://c.tenor.com/rbx3ph5SLRUAAAAj/pikachu-pokemon.gif" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" />
+                        <img className="eevee" src="https://i.pinimg.com/originals/ce/d6/d8/ced6d8351df9f61eb31032c028cc13a9.gif" />
+                        <br />
+                        <button onClick={() => goToPokedexPage(navigate)}>Ir Para Pokedex</button>
+                    </section>
+                );
             case "pokedex":
-                return(
-                    <div>
+                return (
+                    <section>
                         {pokedex}
                         <button onClick={() => goToPokeListPage(navigate)}>Ir Para Lista de Pokemons</button>
-                    </div>
-                )
+                    </section>
+                );
             case "pokedetails":
-                return(
-                    <div>
+                return (
+                    <section>
                         <h1>Detalhes</h1>
                         <button onClick={() => goToPreviousPage(navigate)}>Voltar</button>
-                    </div>
-                )
-            default: 
-            return;
-        }
+                    </section>
+                );
+            default:
+                return;
+        };
     }
 
-    return( 
+    return (
         <StyledHeader>
-        <div>{RenderHeader()}</div>
+            <section>{RenderHeader()}</section>
         </StyledHeader>
-    ); 
+    );
 
 }; 

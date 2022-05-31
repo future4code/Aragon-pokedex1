@@ -1,5 +1,3 @@
-
-
 export const goToPokedexPage = (navigate) => {
     navigate ("/pokedex")
 };
@@ -15,4 +13,3 @@ navigate(-1)
 export const goToDetailsPage = (navigate, pokeName) => {
     navigate(`/pokemon/${pokeName}/details`)
 }
-

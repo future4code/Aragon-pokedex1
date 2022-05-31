@@ -11,11 +11,11 @@ background-color: #c9cdde;
 padding-bottom: 15px;
 font-family: Arial, Helvetica, sans-serif;
 color: #1F356B;
-img{
+
+img {
     width: 20%;
 }
 `
-
 export default function PokeDetailsPage() {
     const params = useParams();
     const { states, getters } = useContext(GlobalStateContext);
@@ -27,8 +27,7 @@ export default function PokeDetailsPage() {
     }, []);
 
     const pokeDetails = pokemon.name ? (
-        <>
-
+        <main>
             <figure>
                 <h2>{pokemon.name.toUpperCase()}</h2>
                 <img src={pokemon.images.front} alt={`${pokemon.name} de frente`} />
@@ -44,7 +43,6 @@ export default function PokeDetailsPage() {
                             <span>{stat.value}</span>
                             <br />
                         </div>
-
                     )
                 })}
             </section>
@@ -70,21 +68,18 @@ export default function PokeDetailsPage() {
                     )
                 })}
             </section>
-
-        </>
+        </main>
 
     ) : <p>CARREGANDO...</p>
 
     return (
-        <div>
+        <section>
             <Header actualPage={"pokedetails"} />
             <hr />
             <StyleCardDetails>
                 <h1>PokeInfos</h1>
                 {pokeDetails}
             </StyleCardDetails>
-        </div>
-
+        </section>
     );
-
 }; 

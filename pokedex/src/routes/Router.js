@@ -6,18 +6,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 export default function Router() {  
 
-    return( 
-
+    return(
         <BrowserRouter>
         <Routes>
           <Route index element={<PokeListPage />} />
-          <Route path={"/pokedex"} element={<PokedexPage />}
-          />
+          <Route path={"/pokedex"} element={<PokedexPage />} />
           <Route path={"/pokemon/:pokeName/details"} element={<PokeDetailsPage />} />
           <Route path={"*"} element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
-
-    ); 
-
+    );
 }; 

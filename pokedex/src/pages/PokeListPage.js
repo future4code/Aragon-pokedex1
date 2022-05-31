@@ -12,10 +12,11 @@ padding-bottom: 15px;
 font-family: Arial, Helvetica, sans-serif;
 color: #1F356B;
 
-span{
-    font-style: bold; 
+span {
+  font-weight: bold; 
 }
-button{
+
+button {
   margin: 9px;
   background-color: #13aa52;
   border: 1px solid #13aa52;
@@ -48,39 +49,34 @@ button:hover {
     padding: 10px 30px;
   }
 }
-
 `
 export default function PokeListPage() {
-    const { states, getters } = useContext(GlobalStateContext)  
-    const { pokeList } = states
-    const { getPokeList } = getters;  
+  const { states, getters } = useContext(GlobalStateContext)
+  const { pokeList } = states
+  const { getPokeList } = getters;
 
-    useEffect(() => {
-        getPokeList();
-    }, [])
+  useEffect(() => {
+    getPokeList();
+  }, [])
 
-    const showPokeList = pokeList[0] ? pokeList.map((pokemon) => {
-        return  (
-            <PokeCard
-            key={pokemon.id}
-            pokemon={pokemon}
-            />
-        );
-    }) : <h2>Carregando...</h2>
-
+  const showPokeList = pokeList[0] ? pokeList.map((pokemon) => {
     return (
-
-        <div>
-            <Header actualPage={"pokelist"} />
-            <main>
-            
-            <StyledList>
-            <h1>Lista de Pokemons</h1>
-                {showPokeList}
-            </StyledList>
-            </main>
-        </div>
-
+      <PokeCard
+        key={pokemon.id}
+        pokemon={pokemon}
+      />
     );
+  }) : <h2>Carregando...</h2>
 
+  return (
+    <section>
+      <Header actualPage={"pokelist"} />
+      <main>
+        <StyledList>
+          <h1>Lista de Pokemons</h1>
+          {showPokeList}
+        </StyledList>
+      </main>
+    </section>
+  );
 }; 

@@ -1,11 +1,7 @@
 export default function ErrorPage() {  
-
-    return( 
-
-     <div>
+    return(
+     <section>
          <p>ErrorPage</p>
-     </div>
-
-    ); 
-
+     </section>
+    );
 }; 

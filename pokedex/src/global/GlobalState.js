@@ -3,7 +3,6 @@ import { useState } from "react";
 import { BASE_URL } from "../constants/urls"
 import GlobalStateContext from "./GlobalStateContext";
 
-
 const GlobalState = (props) => {
     const [pokeList, setPokeList] = useState ([]);
     const [pokemon, setPokemon] = useState({});

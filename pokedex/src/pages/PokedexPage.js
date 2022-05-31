@@ -1,15 +1,10 @@
 import Header from "../components/Header";
 export default function PokedexPage() {  
 
-    return( 
-
-     <div>
+    return(
+     <section>
          <Header actualPage={"pokedex"} />
-
-
          <p>Pokedex</p>
-     </div>
-
+     </section>
     ); 
-
 }; 
