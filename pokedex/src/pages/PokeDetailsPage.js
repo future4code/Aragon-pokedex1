@@ -26,7 +26,7 @@ export default function PokeDetailsPage() {
         getPokeDetails(params.pokeName)
     }, []);
 
-    const pokeDetails = pokemon.name ? (
+    const pokeDetail = pokemon.name ? (
         <main>
             <figure>
                 <h2>{pokemon.name.toUpperCase()}</h2>
@@ -46,7 +46,6 @@ export default function PokeDetailsPage() {
                     )
                 })}
             </section>
-
             <section>
                 <h2>Tipos: </h2>
                 {pokemon.types.map((type) => {
@@ -55,7 +54,6 @@ export default function PokeDetailsPage() {
                     )
                 })}
             </section>
-
             <section>
                 <h2>Habilidades: </h2>
                 {pokemon.abilities.filter((ability, index) => {
@@ -78,7 +76,7 @@ export default function PokeDetailsPage() {
             <hr />
             <StyleCardDetails>
                 <h1>PokeInfos</h1>
-                {pokeDetails}
+                {pokeDetail}
             </StyleCardDetails>
         </section>
     );

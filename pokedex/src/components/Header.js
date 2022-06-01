@@ -80,6 +80,10 @@ img {
   width: 10%;
 }
 
+.pokedex {
+  width: 25%;
+}
+
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: #FECB05;
@@ -105,7 +109,8 @@ export default function Header(props) {
             case "pokedex":
                 return (
                     <section>
-                        {pokedex}
+                        <img className="pokedex" src={pokedex} />
+                        <br />
                         <button onClick={() => goToPokeListPage(navigate)}>Ir Para Lista de Pokemons</button>
                     </section>
                 );
