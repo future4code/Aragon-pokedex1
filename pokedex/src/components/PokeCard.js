@@ -19,6 +19,15 @@ export default function PokeCard(props) {
         setPokedex(orderedPokedex);
     }
 
+    const removeFromPokedex = () => {
+      const newPokedex = pokedex.filter((poke) => {
+          return id !== poke.id 
+      });
+
+      setPokedex(newPokedex);
+
+    }
+
     return (
         <section>
             <span>{name.toUpperCase()} - </span>
@@ -29,7 +38,7 @@ export default function PokeCard(props) {
 
             {props.actualPage === "pokelist" ?
                 <button onClick={addToPokedex}>Adicionar a Pokedex</button>
-                : <button>Remover da Pokedex</button>
+                : <button onClick={removeFromPokedex} >Remover da Pokedex</button>
             }    
                  <button onClick={() => goToDetailsPage(navigate, name)}>Ver detalhes</button>
             <hr />
