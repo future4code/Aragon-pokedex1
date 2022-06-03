@@ -2,6 +2,12 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom"
 import GlobalStateContext from "../global/GlobalStateContext";
 import { goToDetailsPage } from "../routes/coordinator";
+import styled from "styled-components";
+
+const styledCard = styled.div`
+ border: solid 2px black;
+ background-color: black;
+`
 
 export default function PokeCard(props) {
     const navigate = useNavigate();
@@ -30,6 +36,7 @@ export default function PokeCard(props) {
 
     return (
         <section>
+            <styledCard>
             <span>{name.toUpperCase()} - </span>
             <span>Nº: {id}</span>
             <figure>
@@ -41,6 +48,7 @@ export default function PokeCard(props) {
                 : <button onClick={removeFromPokedex} >Remover da Pokedex</button>
             }    
                  <button onClick={() => goToDetailsPage(navigate, name)}>Ver detalhes</button>
+            </styledCard>
             <hr />
         </section>
     );
