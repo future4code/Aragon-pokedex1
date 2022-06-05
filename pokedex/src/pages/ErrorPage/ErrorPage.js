@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { goToPokeListPage } from "../routes/coordinator";
+import { goToPokeListPage } from "../../routes/coordinator";
 
 export default function ErrorPage() {
     const navigate = useNavigate();

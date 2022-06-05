@@ -1,21 +1,9 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Header from "../components/Header";
-import GlobalStateContext from "../global/GlobalStateContext";
-import styled from "styled-components";
+import Header from "../../components/Header";
+import GlobalStateContext from "../../global/GlobalStateContext";
+import { StyleCardDetails } from "./styles"
 
-const StyleCardDetails = styled.div`
-text-align: center;
-border: 5px solid  #FECB05;
-background-color: #c9cdde;
-padding-bottom: 15px;
-font-family: Arial, Helvetica, sans-serif;
-color: #1F356B;
-
-img {
-    width: 20%;
-}
-`
 export default function PokeDetailsPage() {
     const params = useParams();
     const { states, getters } = useContext(GlobalStateContext);
