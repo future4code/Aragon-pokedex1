@@ -1,10 +1,6 @@
-import { useContext } from "react";
-import Header from "../components/Header";
-import PokeCard from "../components/PokeCard";
-import GlobalStateContext from "../global/GlobalStateContext";
-import styled from "styled-components";
+import styled from "styled-components"
 
-const StyledListPokedex = styled.div`
+export const StyledListPokedex = styled.div`
 text-align: center;
 border: 5px solid  #FECB05;
 background-color: #c9cdde;
@@ -50,29 +46,3 @@ button:hover {
   }
 }
 `
-
-export default function PokedexPage() {
-  const { states } = useContext(GlobalStateContext);
-  const { pokedex } = states;
-
-  const showPokedex = pokedex.map((pokemon) => {
-    return (
-      <PokeCard
-        key={pokemon.id}
-        pokemon={pokemon}
-        actualPage={"pokedex"}
-      />
-    )
-  })
-
-  return (
-    <main>
-      <Header actualPage={"pokedex"} />
-      <StyledListPokedex>
-        <h1>Lista Pokedex</h1>
-        <hr/>
-        {showPokedex}
-      </StyledListPokedex>
-    </main>
-  );
-}; 

@@ -4,12 +4,15 @@ import { goToPokedexPage, goToPokeListPage, goToPreviousPage } from "../routes/c
 import pokedex from "./img/pokedex.png"
 
 const StyledHeader = styled.header`
-border: 1px solid black;
+border: 10px solid black;
+margin: 0;
 background-color: #f5050d;
 padding: 2rem;
 text-align: center;
 
+
 button {
+  height: 3rem;
   appearance: button;
   background-color: #3366AF;
   border: solid #1F356B;
@@ -20,14 +23,13 @@ button {
   cursor: pointer;
   display: inline-block;
   font-family: din-round,sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: .8px;
-  line-height: 20px;
+  font-size: 1rem;
+  font-weight: 3rem;
+  line-height: 1rem;
   margin: 0;
   outline: none;
   overflow: visible;
-  padding: 13px 16px;
+  padding: 1rem 0.5rem 1rem 0.5rem;
   text-align: center;
   text-transform: uppercase;
   touch-action: manipulation;
@@ -37,9 +39,8 @@ button {
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  width: 25rem;
-}
 
+}
 button:after {
   background-clip: padding-box;
   background-color: #3366AF;

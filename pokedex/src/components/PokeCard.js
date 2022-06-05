@@ -1,13 +1,7 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import GlobalStateContext from "../global/GlobalStateContext";
-import { goToDetailsPage } from "../routes/coordinator";
-import styled from "styled-components";
-
-const styledCard = styled.div`
- border: solid 2px black;
- background-color: black;
-`
+import { goToDetailsPage } from "../routes/coordinator"
 
 export default function PokeCard(props) {
     const navigate = useNavigate();
@@ -18,7 +12,7 @@ export default function PokeCard(props) {
 
     const addToPokedex = () => {
         const newPokedex = [...pokedex, props.pokemon];
-        
+
         const orderedPokedex = newPokedex.sort((a, b) => {
             return a.id - b.id;
         });
@@ -26,29 +20,25 @@ export default function PokeCard(props) {
     }
 
     const removeFromPokedex = () => {
-      const newPokedex = pokedex.filter((poke) => {
-          return id !== poke.id 
-      });
+        const newPokedex = pokedex.filter((poke) => {
+            return id !== poke.id
+        });
 
-      setPokedex(newPokedex);
+        setPokedex(newPokedex);
 
     }
 
     return (
         <section>
-            <styledCard>
-            <span>{name.toUpperCase()} - </span>
-            <span>Nº: {id}</span>
-            <figure>
-                <img src={images.front} alt={`Foto frontal de ${name}`}></img>
-            </figure>
-
+            <span>{name.toUpperCase()} - Nº: {id}</span>
+            <image>
+            <img src={images.front} alt={`Foto frontal de ${name}`}></img>
+            </image>
             {props.actualPage === "pokelist" ?
                 <button onClick={addToPokedex}>Adicionar a Pokedex</button>
                 : <button onClick={removeFromPokedex} >Remover da Pokedex</button>
-            }    
-                 <button onClick={() => goToDetailsPage(navigate, name)}>Ver detalhes</button>
-            </styledCard>
+            }
+            <button onClick={() => goToDetailsPage(navigate, name)}>Ver detalhes</button>
             <hr />
         </section>
     );
