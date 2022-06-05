@@ -11,7 +11,9 @@ background-color: #c9cdde;
 padding-bottom: 15px;
 font-family: Arial, Helvetica, sans-serif;
 color: #1F356B;
-
+margin: 0;
+padding: 0%;
+box-sizing: border-box;
 span {
   font-weight: bold; 
 }
@@ -51,11 +53,20 @@ button:hover {
 }
 
 div{
+justify-content: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-row: 1fr 1fr 1fr 1fr;
+  padding: 0px 20px 0px 20px;
+  
  
 }
+
+@media screen and (min-device-width: 320px) and (max-device-width: 480px){
+div{
+  grid-template-columns: 1fr;
+}
+}
+
 `
 export default function PokeListPage() {
   const { states, getters, setters } = useContext(GlobalStateContext);

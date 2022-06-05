@@ -6,7 +6,7 @@ import pokedex from "./img/pokedex.png"
 const StyledHeader = styled.header`
 border: 1px solid black;
 background-color: #f5050d;
-padding: 10px;
+padding: 2rem;
 text-align: center;
 
 button {
@@ -37,7 +37,7 @@ button {
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  width: 25%;
+  width: 25rem;
 }
 
 button:after {
