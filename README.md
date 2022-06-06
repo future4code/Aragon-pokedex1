@@ -5,7 +5,7 @@ Nome dos integrantes:
 - Suzy Chiconi
 - Tiago Bonfim
 
-Link do Surge: www.link.com.br
+Link do Surge: https://woebegone-brush.surge.sh/
 
 O que funciona:
 - Item 1
