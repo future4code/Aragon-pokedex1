@@ -1,16 +1,15 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Carolini Constantino
+- Suzy Chiconi
+- Tiago Bonfim
 
-Link do Surge: www.link.com.br
+Link do Surge: https://woebegone-brush.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
-
-O que não funciona: 
-- Item 3
-- Item 4
+Mudança entre as páginas;
+Exibição da lista de pokemons;
+Botões de adicionar e remover da pokedex, e ver detalhes de cada pokemon na página de detalhes;
+Exibição da página de erro;
+Responsividade - aplicamos a responsividade para apresentação do site em diferentes tamanhos de tela.
